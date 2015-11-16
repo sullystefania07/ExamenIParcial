@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Contacto</title>
+        <link rel='stylesheet' href='estilos.css'>
+    </head>
+    <body>
+
+<% @users.each do |user| %>
+
+        <form class='contacto'>
+
+            <div><label>Tu Nombre:</label><%= user.name %></div>
+            <div><label>Tu Email:</label><%= user.email %></div>
+
+<%= link_to 'Show', user %>
+        <%= link_to 'Edit', edit_user_path(user) %>
+       <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </form>
+
+    </body>
+ <% end %>
+
+<%= link_to 'New User', new_user_path %>
+</html>
